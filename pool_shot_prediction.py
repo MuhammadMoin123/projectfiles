@@ -22,7 +22,7 @@ def dottedLine(img,pt1,pt2,color):
         pts.append(p)
     for p in pts:
             cv2.circle(img,p,3,color,-1)
-cap = cv2.VideoCapture('Shot-Predictor-Video.mp4')
+cap = cv2.VideoCapture('cvzonevideo.mp4')
 
 if (cap.isOpened()==False):
     print("Error Opening the Video Stream or File")
@@ -31,7 +31,7 @@ frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 frame_rate = int(cap.get(cv2.CAP_PROP_FPS))
 
 # Define the codec and create VideoWriter object.The output is stored in 'outpy.avi' file.
-out = cv2.VideoWriter('Pool_Shot_Prediction.mp4', cv2.VideoWriter_fourcc(*'mp4v'), frame_rate, (frame_width, frame_height))
+out = cv2.VideoWriter('outputvideo.mp4', cv2.VideoWriter_fourcc(*'mp4v'), frame_rate, (frame_width, frame_height))
 
 
 while (True):
